@@ -1,5 +1,9 @@
 # Spinach_plant_monitor_script
-simple spinach plant monitor tool (leaf, stem)
+simple spinach plant monitor tool (leaf, stem) that can be logged into a google spreadsheet
+*REQUIRES A GOOGLE SERVICE ACCOUNT WITH THEIR APIs ENABLED ON GOOGLE SPREADSHEET AND GOOGLE DRIVE*
+-INSTRUCTIONS AT THE END
+
+
 
 Real-Time Spinach Growth Monitor
 
@@ -84,3 +88,24 @@ Calibration Lock: A self.calibrated flag and "RECALIBRATE" button were added to 
 5. Final Application Functionality
 
 The final code represents a robust, user-friendly, and stable phenotyping tool. It successfully overcomes the challenges of color-based segmentation and unstable live video by using a combination of precise HSV tuning, morphological operations (erosion/dilation), and intelligent data stabilization (smoothing and "best frame" analysis).
+
+(SETTING UP THE APIs)
+Google Sheets API Setup (credentials.json)
+
+-This is for the google_sheets_logger.py script.
+
+Enable the "Google Sheets API" and "Google Drive API" on your account.
+
+Create a "Service Account".
+
+Download the service account's key file. Rename this file to credentials.json and place it in the same directory as the Python scripts.
+
+Create a new Google Sheet (e.g., "Spinach Growth Log").
+
+Click the "Share" button on the sheet.
+
+Find the client_email address inside your credentials.json file (it looks like ...gserviceaccount.com).
+
+Paste this email into the "Share" dialog and give it "Editor" permissions.
+
+
